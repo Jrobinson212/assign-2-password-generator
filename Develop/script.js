@@ -1,30 +1,34 @@
 // Assignment Code
 var generateBtn = document.querySelector("generate");
-var characterLength = 12;
+
+var characterLength = 8;
 var lowerCase =  ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q"];
 var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbol =["@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "~", "{", "}", "[", "]", "|", "/", "-", "="];
-var upperCase = ["A", "B", "C","D", "E", "F","G","H", "I", "J", "K", "K", "L", "M", "N", "O"]
+var upperCase = ["A", "B", "C","D", "E", "F","G","H", "I", "J", "K", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var option1 = []
 
 
 
-// Add event listener to generate button
 
-generateBtn.addEventListener("click", writePassword);
+
 
 // Write password to the #password input
 function writePassword() {
-   var preciseprompts = getPrompts();
-
-   if (preciseprompts){
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  // var preciseprompts = getPrompts();
   
-  passwordText.value = password;
-}
-
-}
+  // if (preciseprompts){
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    
+    passwordText.value = password;
+  }
+  
+  // Add event listener to generate button
+  
+  generateBtn.addEventListener("click", writePassword); 
+   
+ 
 
 function generatePassword(){
  var password = " ";
@@ -38,10 +42,11 @@ return password;
 
 
 function getPrompts(){
-  characterLength = prompt("How amny charcters do you want your pasword to be? (8 - 128 characters");
+  characterLength = prompt("How many characters do you want your pasword to be? (8 - 128 characters");
   
-  if(characterLength || characterLength < 8 || characterLength >128){
-  alert("charcter lentgth has to be greater than 8")
+  if(characterLength || characterLength < 8 || characterLength > 128) {
+  
+   alert ("charcter lentgth has to be greater than 8")
   return false;
   }
 
