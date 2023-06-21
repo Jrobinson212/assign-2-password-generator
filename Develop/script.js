@@ -62,11 +62,11 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(options){
  var password = " ";
- for (var i = 0; 1 < characterLength; i++) {
+ for (var i = 0; i < characterLength; i++) {
   var randomLetter = Math.floor(Math.random() * options.length);
   password = password + options[randomLetter];
  }
- console.log(password)
+console.log(password)
 return password;
 }
 
